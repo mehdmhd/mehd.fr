@@ -71,6 +71,33 @@ export default function RootLayout({
       className={`${parkinsans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Mehdi Makhloufi — Développeur Freelance",
+              url: "https://mehd.fr",
+              email: "me@mehd.fr",
+              description:
+                "Développeur freelance spécialisé en SaaS, applications mobiles, sites vitrines et solutions IA sur mesure.",
+              areaServed: {
+                "@type": "Country",
+                name: "France",
+              },
+              knowsLanguage: ["fr", "en"],
+              priceRange: "$$",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Rubelles",
+                addressCountry: "FR",
+              },
+            }),
+          }}
+        />
+      </head>
       <body className="antialiased min-h-screen flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navbar />
